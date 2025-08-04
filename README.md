@@ -6,7 +6,7 @@ The purpose of this proof of concept is to find out if an LLM can take an existi
 * LLM used: Claude Opus 4 (best coding LLM) - https://www.anthropic.com/claude/opus
 * AI tool used: Claude Code (best coding CLI due to its integration with Clause 4 LLMs) - https://www.anthropic.com/claude-code
 
-#### Conversion Process: 
+### Conversion Process: 
 * Step 1 - use Claude Code (together with Opus 4 LLM) to analyze an existing code repository, then ask it to put together a comprehensive conversion plan for converting the entire codebase from SAS to Python. 
 * Step 2 - ask Claude Code to use this conversion plan (see [PYTHON_CONVERSION_PLAN.md](PYTHON_CONVERSION_PLAN.md)) to implement all phases defined in the plan. Make sure the migration plan includes requirements for comprehensive test coverage of the converted code, via unit and integration tests.
 
@@ -16,10 +16,14 @@ The purpose of this proof of concept is to find out if an LLM can take an existi
 * The converted Python code resides under impl-python/ directory
 * Successful passing of all unit and integration tests. See [impl-python/TEST_SUMMARY.md](impl-python/TEST_SUMMARY.md) for details.
 
-## Running the code
+### PoC Assessment
+* See [POC_ASSESSMENT.md](POC_ASSESSMENT.md) for detailed assessment of the SAS to Python conversion plan ([PYTHON_CONVERSION_PLAN.md](PYTHON_CONVERSION_PLAN.md)) and the conversion implementation.
+* We manually confirmed the core of these findings, especially from Claude Code (using Opus 4) since it does a much more comprehensive analysis of the code than Gemini CLI
+
+### Running the code
 See [impl-python/README.md](impl-python/README.md)
 
-## All prompts issued to Claude Code
+### All prompts issued to Claude Code
 The complete list of prompts issued to Clause Code is listed below:
 
 > you're a SAS and Python programming language expert. Analyze the existing SAS codebase before coming up with a plan to convert it to Python. Save this plan under PYTHON_CONVERSION_PLAN.md. Think hard.
