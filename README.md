@@ -18,7 +18,7 @@ The purpose of this proof of concept is to find out if an LLM can take an existi
 
 ### PoC Assessment
 * See [POC_ASSESSMENT.md](POC_ASSESSMENT.md) for detailed assessment of the SAS to Python conversion plan ([PYTHON_CONVERSION_PLAN.md](PYTHON_CONVERSION_PLAN.md)) and the conversion implementation.
-* We manually confirmed the core of these findings, especially from Claude Code (using Opus 4) since it does a much more comprehensive analysis of the code than Gemini CLI
+* We manually confirmed the core of these findings, especially from Claude Code (using Opus 4) since it does a much more comprehensive analysis of the code than Gemini CLI. The LLM is not only able to convert regular SAS code (data step, proc functions), but also able to replace the complicated mathematical equations with ready to use packages. The outputs from the conversion do not exactly follow the SAS line by line, which requires a subject matter expert to interpret, check, and make changes if needed.
 
 ### Running the code
 See [impl-python/README.md](impl-python/README.md)
